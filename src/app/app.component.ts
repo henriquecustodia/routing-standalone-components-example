@@ -1,14 +1,26 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  imports: [RouterOutlet, RouterLink],
+  template: ` 
+  <ul>
+    <li>
+      <a routerLink="first">first</a>
+    </li>
+    <li>
+      <a routerLink="second">second</a>
+    </li>
+    <li>
+      <a routerLink="third">third</a>
+    </li>
+    <li>
+      <a routerLink="fourth">fourth</a>
+    </li>
+  </ul>
+  
+  <router-outlet /> `,
 })
-export class AppComponent {
-  title = 'standalone-component-routing';
-}
+export class AppComponent {}
